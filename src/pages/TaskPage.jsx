@@ -12,7 +12,7 @@ function TaskPage() {
     // Pega o valor do parâmetro "description" na URL
     const description = searchParams.get("description")
     return (
-        <div className="h-screen w-screen bg-slate-500 p-6" >
+        <div className="h-screen w-screen bg-purple-500 p-6" >
             <div className="w-[500px] mx-auto space-y-4">
                 <div className="flex justify-center relative md-6">
                     <button

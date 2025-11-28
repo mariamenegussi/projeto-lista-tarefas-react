@@ -10,10 +10,10 @@ function App() {
   // state principal do app
   // tasks = lista atual de tarefas
   // setTasks = função que atualiza essa lista
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
-
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem("tasks");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   useEffect(()=> {
     localStorage.setItem("tasks", JSON.stringify(tasks)); 
@@ -84,7 +84,7 @@ function App() {
 
 
   return (
-    <div className="w-screen h-screen bg-blue-500 flex justify-center p-6">
+    <div className="w-screen h-screen bg-purple-500 flex justify-center p-6">
      <div className="w-[500px] space-y-4">
        <Title>Gerenciador de Tarefas</Title>
 
